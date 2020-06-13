@@ -7,9 +7,9 @@ node {
         checkout scm
     }
     
-   stage ('Aqua Scan Dev Namespace') {
-        /* Do a remote scan of the image in the dev namespace before pulling */
-        aqua customFlags: '--layer-vulnerabilities', hideBase: false, hostedImage: 'orders-nginx-dev:good', localImage: '', locationType: 'hosted', notCompliesCmd: '', onDisallowed: 'fail', policies: '', register: false, registry: 'JFrog', showNegligible: true
+   stage ('Deploy Policy') {
+        /* Deploy runtime policy */
+        sh "curl -H "Content-Type: application/json" -X PUT -u administrator:h6p5hxxb -d @aqua_profile.json http://a84d335a29f2a11eaa485025822714ea-958075476.ap-southeast-1.elb.amazonaws.com:8080/api/v1/securityprofiles/$(cat aqua_profile_name.txt)"
     }
     
    stage('Package Dev Image') {
