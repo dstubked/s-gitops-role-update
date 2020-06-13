@@ -1,0 +1,12 @@
+{
+    "name": "bookinfo-app-team-role",
+    "description": "Bookinfo app team role",
+    "author": "administrator",
+    "updated_at": "2020-06-13T08:43:12.83714Z",
+    "permission": "bookinfo-app-team",
+    "scopes": [
+        "Bookinfo"
+    ],
+    "groups": null,
+    "users": null
+}
