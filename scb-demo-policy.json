@@ -28,7 +28,8 @@
         "enabled": true,
         "allow_executables": [
             "/bin/ps",
-            "/bin/usr/curl"
+            "/bin/curl",
+            "/usr/bin/wget"
         ],
         "separate_executables": false,
         "allow_root_executables": []
